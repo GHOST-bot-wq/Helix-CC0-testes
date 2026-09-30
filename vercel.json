@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/admin.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/test.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/akadpay_pixout_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/akadpay_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/amplopay_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/expfypay_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/pixup_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/royalbanking_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "api/vizzionpay_webhook.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(config\\.php|bancodedadosh\\.sql|includes/.*|\\.htaccess|\\.user\\.ini|LEIA\\ AQUI\\.txt)",
+      "status": 403
+    },
+    {
+      "src": "/img/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/api/admin\\.php(.*)",
+      "dest": "/api/admin"
+    },
+    {
+      "src": "/admin/api\\.php(.*)",
+      "dest": "/api/admin"
+    },
+    {
+      "src": "/api/index\\.php(.*)",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/api/test\\.php(.*)",
+      "dest": "/api/test"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/admin/?$",
+      "dest": "/admin/index.html"
+    },
+    {
+      "src": "/admin/((?!index\\.html|api\\.php|.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|webp)$).*)$",
+      "dest": "/api/admin"
+    },
+    {
+      "src": "/index\\.php",
+      "dest": "/index.html"
+    }
+  ]
+}
